@@ -1,0 +1,13 @@
+select model from pc where model like'%1%1%';
+select * from outcome where month(date) = 03;
+select * from outcome_o where day(date) = 14;
+select name from ships where name rlike'^W[:alnum:]+n$';
+select name from ships where name like'%e%e%';
+select name, launched from ships where name rlike'[^a]$';
+select name from battles where name like'% %' and name rlike'[^c]$';
+select * from trip where hour(time_out) between 12 and 16 or (hour(time_out) = 17 and minute(time_out) = 00);
+select * from trip where hour(time_in) between 17 and 22 or (hour(time_in) = 23 and minute(time_in) = 00);
+select date from pass_in_trip where place like'1%'order by date;
+select date from pass_in_trip where place like'%c'order by date;
+select substring_index(name, ' ', -1) from passenger where name like'% C%';
+select substring_index(name, ' ', -1) from passenger where name not like'% J%';
